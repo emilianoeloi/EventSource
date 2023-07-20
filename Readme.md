@@ -1,4 +1,4 @@
-# Projeto HTTP Push Stream
+# Push Stream
 
 Este projeto demonstra o uso de HTTP Push Stream (também conhecido como Server-Sent Events ou SSE) para enviar mensagens de um servidor para um cliente em tempo real. O projeto consiste em três partes:
 
