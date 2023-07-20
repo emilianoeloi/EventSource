@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #status {
+      color: blue;
+    }
+
+    .message {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Push Stream Event Listener</h1>
+  <h2 id="status">Connecting...</h2>
+  <div id="container"></div>
+
+  <script>
+    var source = new EventSource('http://localhost:8080/sse');
+
+    var statusElement = document.getElementById('status');
+    var containerElement = document.getElementById('container');
+
+    source.onopen = function(event) {
+      statusElement.textContent = 'Connection was established';
+      statusElement.style.color = 'green';
+    };
+
+    source.onerror = function(event) {
+      statusElement.textContent = 'An error has occurred';
+      statusElement.style.color = 'red';
+    };
+
+    source.onmessage = function(event) {
+      var messageElement = document.createElement('div');
+      messageElement.className = 'message';
+      messageElement.textContent = 'New message received: ' + event.data;
+      containerElement.appendChild(messageElement);
+    };
+
+    source.addEventListener('user-connected', function(event) {
+      var messageElement = document.createElement('div');
+      messageElement.className = 'message';
+      messageElement.textContent = 'User connected: ' + event.data;
+      containerElement.appendChild(messageElement);
+    });
+  </script>
+</body>
+</html>

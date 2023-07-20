@@ -1,0 +1,15 @@
+{
+    "name": "http-push-stream",
+    "version": "1.0.0",
+    "description": "Projeto HTTP Push Stream",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "Seu Nome",
+    "license": "MIT",
+    "dependencies": {
+      "node-uuid": "^1.4.8"
+    }
+  }
+  
