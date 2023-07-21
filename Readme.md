@@ -1,5 +1,7 @@
 # Push Stream
 
+Choose your language: [English](README.en.md)
+
 Este projeto demonstra o uso de HTTP Push Stream (também conhecido como Server-Sent Events ou SSE) para enviar mensagens de um servidor para um cliente em tempo real. O projeto consiste em três partes:
 
 1. **Servidor:** Um servidor Node.js que envia mensagens aleatórias para qualquer cliente conectado a cada três segundos.
